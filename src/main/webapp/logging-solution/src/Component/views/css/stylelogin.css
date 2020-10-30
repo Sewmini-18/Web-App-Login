@@ -1,0 +1,61 @@
+.centerCard{
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}   
+
+
+.form-holder {
+    padding-left: 24px;
+    position: relative; }
+    .form-holder:before {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid #ff9a9c;
+      position: absolute;
+      left: 1px;
+      top: 50%;
+      transform: translateY(-50%); }
+    .form-holder.active:before {
+      border: 2px solid transparent;
+      background: #ff9a9c; }
+      .form-control {
+        display: block;
+        width: 100%;
+        border-radius: 23.5px;
+        height: 47px;
+        padding: 0 24px;
+        color: #808080;
+        font-size: 13px;
+        border: none;
+        background: #f7f7f7;
+        margin-bottom: 25px; }
+        .form-control::-webkit-input-placeholder {
+          font-size: 13px;
+          color: #808080;
+          text-transform: uppercase;
+          font-family: "Montserrat-Regular"; }
+        .form-control::-moz-placeholder {
+          font-size: 13px;
+          color: #808080;
+          text-transform: uppercase;
+          font-family: "Montserrat-Regular"; }
+        .form-control:-ms-input-placeholder {
+          font-size: 13px;
+          color: #808080;
+          text-transform: uppercase;
+          font-family: "Montserrat-Regular"; }
+        .form-control:-moz-placeholder {
+          font-size: 13px;
+          color: #808080;
+          text-transform: uppercase;
+          font-family: "Montserrat-Regular"; }
+      
