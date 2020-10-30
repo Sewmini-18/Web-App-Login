@@ -18,4 +18,4 @@ GET:  http://localhost:8081/home/users
 POST: http://localhost:8081/signup
 
 spring.data.mongodb.port=27017
-spring.data.mongodb.database=logging_solution_db
+spring.data.mongodb.database=logging_solution_db  
