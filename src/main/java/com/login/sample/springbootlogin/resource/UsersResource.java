@@ -11,18 +11,28 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-//@RequestMapping("/home/users")
+
 @CrossOrigin(origins = "http://localhost:3000")
 public class UsersResource {
 
     @Autowired
     private UserRepository userRepository;
 
+
     @Autowired
     private SequenceGeneratorService sequenceGeneratorService;
 
     public UsersResource(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+
+    public Users fetchUserByEmail(String email){
+        return userRepository.findByEmail(email);
+    }
+
+    public Users fetchUserByEmailAndPassword(String email, String password){
+        return userRepository.findByEmailAndPassword(email,password);
     }
 
     @GetMapping("/home/users")
@@ -42,4 +52,21 @@ public class UsersResource {
     public Optional<Users> findUser(@PathVariable long id){
         return userRepository.findById(id);
     }
+
+
+    @PostMapping("/login")
+    public Users loginUser(@RequestBody Users user) throws Exception {
+        String tempEmail = user.getEmail();
+        String tempPsw = user.getPassword();
+        Users userobj = null;
+        if (tempEmail != null && tempPsw != null) {
+            userobj = fetchUserByEmailAndPassword(tempEmail, tempPsw);
+        }
+        if(userobj==null){
+            throw new Exception("Bad Credintial");
+        }
+        return userobj;
+    }
+
+
 }
