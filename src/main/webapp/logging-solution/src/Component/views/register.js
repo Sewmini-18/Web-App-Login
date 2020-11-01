@@ -42,7 +42,7 @@ export default class Register extends Component {
     //this.count=this.state.users.length;
   }
 
-  intialState = {  name: '', email: '', nic: '', password: '' }
+  intialState = { name: '', email: '', nic: '', password: '' }
 
 
 
@@ -52,7 +52,7 @@ export default class Register extends Component {
     console.log(this.state);
 
     const user = {
-     
+
       name: this.state.name,
       email: this.state.email,
       nic: this.state.nic,
@@ -88,7 +88,7 @@ export default class Register extends Component {
 
             <form id="UserRegisterForm" onSubmit={this.submitRegisterUser}>
               <h3>REGISTER</h3>
-              
+
               <div className="form-holder active"><span className="icon"><Person /></span>
                 <input className="form-control" type="text" placeholder="Name"
                   name="name" value={name} onChange={this.userChange} required />
@@ -130,6 +130,7 @@ export default class Register extends Component {
                   <Col className="text-center"><p><br /> &nbsp;Already have an account?
                 <a className="alink " href="/login"> Login</a></p></Col>
                 </Row>
+               
               </div>
             </form>
           </div>

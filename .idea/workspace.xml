@@ -5,22 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="948395bd-e046-4948-973a-6ab2de4ba703" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/spring-boot-login.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spring-boot-login.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-mongodb/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-mongodb/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/WiredTiger.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-mongodb/collection-2-5100550421226009559.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/collection-2-5100550421226009559.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-mongodb/diagnostic.data/metrics.2020-10-30T16-01-41Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/diagnostic.data/metrics.2020-10-30T16-01-41Z-00000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-mongodb/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/diagnostic.data/metrics.interim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-mongodb/index-3-5100550421226009559.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/index-3-5100550421226009559.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-mongodb/index-6-5100550421226009559.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/index-6-5100550421226009559.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-mongodb/journal/WiredTigerLog.0000000005" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data-mongodb/mongod.lock" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/mongod.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-mongodb/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/sizeStorer.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/login/sample/springbootlogin/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/login/sample/springbootlogin/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/login/sample/springbootlogin/resource/UsersResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/login/sample/springbootlogin/resource/UsersResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/login/sample/springbootlogin/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/login/sample/springbootlogin/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/login/sample/springbootlogin/resource/UsersResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/login/sample/springbootlogin/resource/UsersResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +77,19 @@
       <option name="presentableId" value="Default" />
       <updated>1603867965861</updated>
     </task>
+    <task id="LOCAL-00001" summary="backend login">
+      <created>1604163968686</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604163968686</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="backend login" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend login" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="13" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604150230127">
@@ -92,6 +100,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1604162809507" />
+    <state x="183" y="0" key="CommitChangelistDialog2" timestamp="1604163959519">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="183" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604163959519" />
     <state x="484" y="118" key="FileChooserDialogImpl" timestamp="1604161389149">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -116,6 +128,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604151255143" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1604163991524">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604163991524" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604151304383">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
