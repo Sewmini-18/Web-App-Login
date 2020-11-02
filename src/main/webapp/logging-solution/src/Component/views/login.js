@@ -1,8 +1,9 @@
-import { Button, withStyles} from '@material-ui/core';
+import { Button, withStyles } from '@material-ui/core';
 import React, { Component } from 'react';
 import { purple } from '@material-ui/core/colors';
 import './css/style.css';
 import axios from 'axios';
+import ActionAlerts from './alert'
 
 import { Row, Col } from 'react-bootstrap';
 
@@ -28,7 +29,7 @@ const ColorButton = withStyles((theme) => ({
       outline: '10px',
     }
   },
- 
+
 
 }))(Button);
 
@@ -44,12 +45,18 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = this.intialState;
+   
+
     this.userChange = this.userChange.bind(this);
     this.submitLoginUser = this.submitLoginUser.bind(this);
   }
 
-  intialState = {email:'', password:'' };
-  setStatus={status:'Wrong credintial'};
+  componentDidMount() {
+    document.title = "Login"
+  }
+
+  intialState = { email: '', password: '', alert:''};
+
   submitLoginUser = event => {
     //alert(this.state.password);
     event.preventDefault();
@@ -57,21 +64,26 @@ class Login extends Component {
 
     const user = {
 
-      name: this.state.name,
       email: this.state.email,
-      nic: this.state.nic,
       password: this.state.password
     }
 
     axios.post("http://localhost:8081/login", user)
       .then(response => {
         if (response.data != null) {
-          this.setState(this.intialState);
-          alert("successfiul log!");
+          this.setState({ alert: 'success' });
+        console.log("successfully login");
+        setTimeout(() => this.setState({ alert: '' }), 4000);
+        setTimeout(() => this.props.history.push("/home"), 5000);
+      
         }
       }).catch(error => {
-        console.log("bad crediantial");
-      })
+        this.setState({ alert: 'error' });
+        console.log("Bad credential");
+        setTimeout(() => this.setState({ alert: '' }), 4000);
+      });
+    
+    this.setState(this.intialState);
 
 
   }
@@ -95,10 +107,11 @@ class Login extends Component {
 
   render() {
 
-    const {email, password} = this.state;
-
+    const { email, password, alert } = this.state;
+    
+   
     return (
-     
+      
       <div >
 
         <div className="Wrapper">
@@ -107,15 +120,15 @@ class Login extends Component {
             <form className="login" >
               <h3>LOGIN</h3>
               <div className="form-holder "><span className="icon"><Email /></span>
-              <input className="form-control" type="text" placeholder="e-mail" name="email"
-                value={email} onChange={this.userChange} /></div>
+                <input className="form-control" type="text" placeholder="e-mail" name="email"
+                  value={email} onChange={this.userChange} pattern="[A-Za-z]{3}" title="example@gmail.com" required/></div>
               <div className="form-holder "><span className="icon"><LockOpen /></span>
-              <input className="form-control" type="password" placeholder="password" name="password"
-                value={password} onChange={this.userChange} /></div>
+                <input className="form-control" type="password" placeholder="password" name="password"
+                  value={password} onChange={this.userChange} required/></div>
               <div>
                 <Row>
 
-                  
+
                   <Col>
                     <div className="text-right"><a href="/">forget password? </a> &nbsp;&nbsp;</div><br />
 
@@ -138,17 +151,18 @@ class Login extends Component {
                 <a className="alink " href="/register"> Register</a></p></Col>
                 </Row>
 
-                <h2>{this.state.status}</h2>
+
 
 
               </div>
-
-
-
-
+             {this.state.alert==="error"?<ActionAlerts name="alert" value={alert} 
+             children={{  severity:"error",message: "Email or Password is wrong" }}/>:null}
+             {this.state.alert==="success"?<ActionAlerts name="alert" value={alert}
+             children={{  severity:"success",message: "Successfully login" }}/>:null}
             </form>
           </div>
         </div>
+
       </div >
     )
   }

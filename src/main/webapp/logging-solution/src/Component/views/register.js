@@ -6,7 +6,7 @@ import { Row, Col } from 'react-bootstrap';
 import './css/style.css'
 import { Person, Lock, Email, Call } from '@material-ui/icons';
 import axios from 'axios';
-
+import ActionAlerts from './alert'
 
 const ColorButton = withStyles((theme) => ({
   root: {
@@ -42,9 +42,11 @@ export default class Register extends Component {
     //this.count=this.state.users.length;
   }
 
-  intialState = { name: '', email: '', nic: '', password: '' }
+  intialState = { name: '', email: '', nic: '', password: '' , alert:''}
 
-
+  componentDidMount() {
+    document.title = "Register"
+  }
 
   submitRegisterUser = event => {
     //alert(this.state.password);
@@ -62,12 +64,17 @@ export default class Register extends Component {
     axios.post("http://localhost:8081/signup", user)
       .then(response => {
         if (response.data != null) {
-          this.setState(this.intialState);
-          alert("successfiul!");
+         
+          this.setState({ alert: 'success' });
+          setTimeout(() => this.setState({ alert: '' }), 4000);
+        setTimeout(() => this.props.history.push("/home"), 5000);
         }
       }).catch(error => {
-        console.log(error.message);
-      })
+        this.setState({ alert: 'error' });
+        console.log("Bad credential");
+        setTimeout(() => this.setState({ alert: '' }), 4000);
+      });
+      this.setState(this.intialState);
 
 
   }
@@ -77,7 +84,7 @@ export default class Register extends Component {
   }
   render() {
 
-    const { name, email, nic, password } = this.state;
+    const { name, email, nic, password, alert } = this.state;
 
     return (
 
@@ -95,7 +102,7 @@ export default class Register extends Component {
               </div>
 
               <div className="form-holder"><span className="icon"><Email /></span>
-                <input className="form-control" type="text" placeholder="e-mail"
+                <input className="form-control" type="email" placeholder="e-mail" 
                   name="email" value={email} onChange={this.userChange} required />
               </div>
 
@@ -132,6 +139,10 @@ export default class Register extends Component {
                 </Row>
                
               </div>
+              {this.state.alert==="error"?<ActionAlerts name="alert" value={alert} 
+             children={{  severity:"error",message: "Email or Password is wrong" }}/>:null}
+             {this.state.alert==="success"?<ActionAlerts name="alert" value={alert}
+             children={{  severity:"success",message: "Successfully login" }}/>:null}
             </form>
           </div>
         </div>
