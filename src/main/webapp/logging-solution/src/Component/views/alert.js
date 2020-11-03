@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Alert from '@material-ui/lab/Alert';
-import Button from '@material-ui/core/Button';
+
 
 class ActionAlerts extends Component {
 
@@ -20,21 +20,16 @@ class ActionAlerts extends Component {
     render() {
         if (this.state.isActive) {
             return (
+
                 <div>
                     <div >
-
                         <Alert severity={this.props.children.severity} onClose={() => this.hideAlert()}  >{this.props.children.message}</Alert>
-
                     </div>
-                  
-
-
                 </div>
-
 
             );
         }
-        return <div />
+        <div />
     }
 }
 

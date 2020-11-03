@@ -1,47 +1,23 @@
 import React from 'react';
-import Table from 'react-bootstrap/Table';
+import { Row, Jumbotron, } from 'react-bootstrap'
 
 export const Home = (props) => {
-    
-    return (
-        <div className="container mgntop">
-            <h2>Home</h2>         
-            <Table striped bordered hover variant="light">
-                <thead>
-                <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>First name 1</td>
-                    <td>Last Name 1</td>
-                    <td>first.last@example.com</td>
-                </tr>
-                <tr>
-                    <td>First name 2</td>
-                    <td>Last Name 2</td>
-                    <td>first.last@example.com</td>
-                </tr>
-                <tr>
-                    <td>First name 3</td>
-                    <td>Last Name 3</td>
-                    <td>first.last@example.com</td>
-                </tr>
-                <tr>
-                    <td>First name 4</td>
-                    <td>Last Name 4</td>
-                    <td>first.last@example.com</td>
-                </tr>
-                <tr>
-                    <td>First name 5</td>
-                    <td>Last Name 5</td>
-                    <td>first.last@example.com</td>
-                </tr>
-                </tbody>
-            </Table>
-        </div>
-    )
+
+return (
+<div className="container mgntop">
+    <h2>Home</h2>
+    <Row>
+        <Jumbotron>
+            <h1>&nbsp; Hello, world!</h1>
+
+            <p>
+                This is a simple hero unit, a simple jumbotron-style component for calling
+                extra attention to featured content or information. content or information.
+                content or information.
+            </p>
+            
+        </Jumbotron>
+    </Row>
+</div>
+)
 }

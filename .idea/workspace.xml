@@ -6,15 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="948395bd-e046-4948-973a-6ab2de4ba703" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-mongodb/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/WiredTiger.turtle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-mongodb/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/WiredTiger.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-mongodb/collection-2-5100550421226009559.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/collection-2-5100550421226009559.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-mongodb/diagnostic.data/metrics.2020-11-01T04-18-28Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/diagnostic.data/metrics.2020-11-01T04-18-28Z-00000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-mongodb/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/diagnostic.data/metrics.interim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-mongodb/index-3-5100550421226009559.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/index-3-5100550421226009559.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-mongodb/index-6-5100550421226009559.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/index-6-5100550421226009559.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-mongodb/mongod.lock" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/mongod.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-mongodb/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data-mongodb/sizeStorer.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/logging-solution/src/Component/views/register.js" afterDir="false" />
     </list>

@@ -4,18 +4,22 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Register from './Component/views/register';
 import Login from './Component/views/login';
-import FormP from './Component/views/form';
+
+import Layout from './Component/views/layout/layout'
+
+
 
 function App() {
 
   return (
     <BrowserRouter>
+   
       <Switch>
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/form" component={FormP} />
-        
+        <Route path='/home' render={(props) => <Layout {...props} /> } /> 
       </Switch>
+      
     </BrowserRouter>
 
   );

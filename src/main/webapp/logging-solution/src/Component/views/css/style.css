@@ -310,7 +310,7 @@ input::placeholder {
   margin-left: 25px;
 }
 
-button {
+.abutton {
   letter-spacing: 2px;
   border: none;
   width: 133px;
@@ -332,7 +332,7 @@ button {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
-button:hover {
+.abutton:hover {
   -webkit-animation-name: hvr-wobble-horizontal;
   animation-name: hvr-wobble-horizontal;
   -webkit-animation-duration: 1s;
@@ -343,5 +343,8 @@ button:hover {
   animation-iteration-count: 1;
 }
 
-
+input[type="button"]:disabled{
+  color:black;
+  background:#37474f;
+}
 /*# sourceMappingURL=style.css.map */

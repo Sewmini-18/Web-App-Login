@@ -11,31 +11,29 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class Layout extends React.Component {
     componentDidMount() {
         document.title = "Home"
-      }
-    render(){
-      const { match } = this.props
-      return(
-        
+    }
+    render() {
+        const { match } = this.props
+        return (
+
             <div className="">
-                <Header appTitle="React Multi Layout"/>
+                <Header appTitle=" Layout" />
                 <Switch>
-                    <Route 
+                    <Route
                         exact path={`${match.path}`}
-                        render={(props) => <Home {...props} /> }/>
-                    
+                        render={(props) => <Home {...props} />} />
                     <Route path={`${match.path}/profile`} component={Profile} />
-                    
                 </Switch>
                 <Footer />
             </div>
-        
-      )
-   }
- }
 
- Layout.propTypes = {
-     match: PropTypes.any.isRequired
- }
- 
+        )
+    }
+}
+
+Layout.propTypes = {
+    match: PropTypes.any.isRequired
+}
+
 
 export default Layout;
