@@ -4,7 +4,7 @@ import { blue } from '@material-ui/core/colors';
 import { Row, Col } from 'react-bootstrap';
 
 import './css/style.css'
-import { Person, Lock, Email, Call } from '@material-ui/icons';
+import { Person, Lock, Email, AccountBoxRounded, VisibilityOutlined, VisibilityOffOutlined } from '@material-ui/icons';
 import axios from 'axios';
 import ActionAlerts from './alert'
 
@@ -39,22 +39,28 @@ export default class Register extends Component {
 
   }
 
-  intialState = { name: '', email: '', nic: '', password: '', alert: '' }
+  intialState = { name: '', email: '', nic: '', password: '', alert: '', isPasswordShown: false }
 
   componentDidMount() {
     document.title = "Register"
+  }
+
+  togglePasswordVisibility = () =>{
+    const {isPasswordShown} = this.state;
+    this.setState({isPasswordShown: !isPasswordShown});
   }
 
   submitRegisterUser = event => {
     //alert(this.state.password);
     event.preventDefault();
     console.log(this.state);
-
+    let email = this.state.email.toLowerCase();
     const user = {
       name: this.state.name,
-      email: this.state.email,
+      email: email,
       nic: this.state.nic,
       password: this.state.password
+     
     }
 
     axios.post("http://localhost:8081/signup", user)
@@ -78,7 +84,7 @@ export default class Register extends Component {
 
   render() {
 
-    const { name, email, nic, password, alert } = this.state;
+    const { name, email, nic, password, alert, isPasswordShown } = this.state;
 
     return (
 
@@ -86,31 +92,36 @@ export default class Register extends Component {
         <div className="Wrapper">
           <div className="inner">
             <form id="UserRegisterForm" onSubmit={this.submitRegisterUser}>
-              <h3>REGISTER</h3>
+              <h3>REGISTER</h3><br/>
 
               <div className="form-holder active"><span className="icon"><Person /></span>
-                <input className="form-control" type="text" placeholder="Full Name"
+                <input className="form-control" type="text" placeholder="Full Name" autoComplete="off"
                   name="name" value={name} onChange={this.userChange} required minLength="5" />
               </div>
 
               <div className="form-holder"><span className="icon"><Email /></span>
-                <input className="form-control" type="email" placeholder="e-mail"
-                  name="email" value={email} onChange={this.userChange} required />
+                <input className="form-control" type="email" placeholder="e-mail" autoComplete="off"
+                  name="email" value={email} onChange={this.userChange} autoCapitalize="none" required />
               </div>
 
-              <div className="form-holder "><span className="icon"><Call /></span>
-                <input className="form-control" type="text" placeholder="NIC"
+              <div className="form-holder "><span className="icon"><AccountBoxRounded /></span>
+                <input className="form-control" type="text" placeholder="NIC" autoComplete="off"
                   title="Please provide a valid NIC Number. It should has 9 numbers followed by one letter that is v, V.
                 (ex: xxxxxxxxxxV) "
                   pattern="^([0-9]{9}[v|V]|[0-9]{12})$" name="nic" value={nic} onChange={this.userChange} required />
               </div>
 
               <div className="form-holder "><span className="icon"><Lock /></span>
-                <input className="form-control" type="password" placeholder="password"
+                <input className="form-control" type={(isPasswordShown)? "text": "password"} placeholder="password"
                   name="password" value={password} onChange={this.userChange}
                   pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$"
                   title="Password must be between 6-15 characters, and must include at least one upper case and 
                   one lower case letter, and one numeric digit" required />
+              <div class="eye-reg" title={isPasswordShown? "hide password": "show password"}>
+               {isPasswordShown? <VisibilityOffOutlined  title="hide"  type="button" onClick={this.togglePasswordVisibility} />
+               : <VisibilityOutlined title="show" type="button" onClick={this.togglePasswordVisibility}  /> }
+               
+               </div>
               </div>
 
               <div >
@@ -128,15 +139,15 @@ export default class Register extends Component {
                   </ColorButton>
                   </Col>
 
-                  <Col className="text-center"><p><br /> &nbsp;Already have an account?
+                  <Col className="text-center"><p>&nbsp;Already have an account?
                     <a className="alink " href="/login"> Login</a></p></Col>
                 </Row>
               </div>
 
               {this.state.alert === "error" ? <ActionAlerts name="alert" value={alert}
-                children={{ severity: "error", message: "Email or Password is wrong" }} /> : null}
+                children={{ severity: "error", message: "Something went wrong" }} /> : null}
               {this.state.alert === "success" ? <ActionAlerts name="alert" value={alert}
-                children={{ severity: "success", message: "Successfully login" }} /> : null}
+                children={{ severity: "success", message: "Successfully Register" }} /> : null}
                 
             </form>
           </div>

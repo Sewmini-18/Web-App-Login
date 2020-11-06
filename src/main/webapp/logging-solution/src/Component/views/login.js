@@ -5,7 +5,8 @@ import './css/style.css';
 import axios from 'axios';
 import ActionAlerts from './alert'
 import { Row, Col } from 'react-bootstrap';
-import { LockOpen, MailOutline } from '@material-ui/icons';
+
+import { LockOpen, MailOutline, VisibilityOutlined, VisibilityOffOutlined } from '@material-ui/icons';
 
 
 const ColorButton = withStyles((theme) => ({
@@ -36,21 +37,29 @@ class Login extends Component {
     this.state = this.intialState;
     this.userChange = this.userChange.bind(this);
     this.submitLoginUser = this.submitLoginUser.bind(this);
+    
   }
 
-  componentDidMount() {
+  componentDidMount() { 
     document.title = "Login"
   }
 
-  intialState = { email: '', password: '', alert: '' };
+  intialState = { email: '', password: '', alert: '', isPasswordShown: false };
+
+  togglePasswordVisibility = () =>{
+    const {isPasswordShown} = this.state;
+    this.setState({isPasswordShown: !isPasswordShown});
+  }
 
   submitLoginUser = event => {
     //alert(this.state.password);
     event.preventDefault();
     console.log(this.state);
 
+    let email = this.state.email.toLowerCase();
+
     const user = {
-      email: this.state.email,
+      email: email,
       password: this.state.password
     }
 
@@ -78,7 +87,8 @@ class Login extends Component {
 
   render() {
 
-    const { email, password, alert } = this.state;
+    const { email, password, alert, isPasswordShown } = this.state;
+
 
     return (
 
@@ -86,15 +96,22 @@ class Login extends Component {
         <div className="Wrapper">
           <div className="inner">
             <form className="login" >
-              <h3>LOGIN</h3>
+              <h3>LOGIN</h3><br/>
 
               <div className="form-holder "><span className="icon"><MailOutline /></span>
                 <input className="form-control" type="email" placeholder="e-mail"
                   name="email" value={email} onChange={this.userChange} required /></div>
 
               <div className="form-holder "><span className="icon"><LockOpen /></span>
-                <input className="form-control" type="password" placeholder="password" name="password"
-                  value={password} onChange={this.userChange} required /></div>
+                <input className="form-control" placeholder="password" name="password" value={password} 
+                type={(isPasswordShown)? "text": "password"} onChange={this.userChange} required /> 
+               <div class="eye" title={isPasswordShown? "hide password": "show password"}>
+               {isPasswordShown? <VisibilityOffOutlined  title="hide"  type="button" onClick={this.togglePasswordVisibility} />
+               : <VisibilityOutlined title="show" type="button" onClick={this.togglePasswordVisibility}  /> }
+               
+               </div>
+               </div>
+             
               <div>
 
                 <Row>
@@ -111,7 +128,7 @@ class Login extends Component {
                       Login
                   </ColorButton>
                   </Col>
-                  <Col className="text-center"><p><br /> &nbsp;You don't have an account?
+                  <Col className="text-center"><p> &nbsp;You don't have an account?
                 <a className="alink " href="/register"> Register</a></p></Col>
                 </Row>
               </div>
