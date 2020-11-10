@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import { Home } from '../pages/home'
 import Header from '../layout/header'
 import { Profile } from '../pages/profile'
+import CustomerForm from '../pages/adminPages/customerForm'
 import Footer from '../layout/footer'
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,6 +24,7 @@ class Layout extends React.Component {
                         exact path={`${match.path}`}
                         render={(props) => <Home {...props} />} />
                     <Route path={`${match.path}/profile`} component={Profile} />
+                    <Route path={`${match.path}/customerform`} component={CustomerForm} />
                 </Switch>
                 <Footer />
             </div>

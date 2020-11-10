@@ -17,7 +17,7 @@ class Header extends Component {
 
         const mTop = {
             marginTop: "20px",
-            marginRight: "20px"
+            
         }
 
         return (
@@ -32,9 +32,10 @@ class Header extends Component {
                         <Navbar.Collapse id="basic-navbar-nav">
 
                             <Nav className="mr-auto">
-                                <Nav.Link href="home/profile">
+                                <Nav.Link href="/home/profile">
                                     Profile {"   "}    </Nav.Link>
-                                <Nav.Link href="home/users/">{"   "}Users</Nav.Link>
+                                <Nav.Link href="/home/users/">{"   "}Users</Nav.Link>
+                                <Nav.Link href="/home/customerform">{"   "}Form</Nav.Link>
 
                                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="/home">Action</NavDropdown.Item>
